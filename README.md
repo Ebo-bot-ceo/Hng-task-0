@@ -1,40 +1,15 @@
-# @jridgewell/resolve-uri
+# Installation
+> `npm install --save @types/node`
 
-> Resolve a URI relative to an optional base URI
+# Summary
+This package contains type definitions for node (https://nodejs.org/).
 
-Resolve any combination of absolute URIs, protocol-realtive URIs, absolute paths, or relative paths.
+# Details
+Files were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node/v22.
 
-## Installation
+### Additional Details
+ * Last updated: Fri, 17 Oct 2025 02:09:19 GMT
+ * Dependencies: [undici-types](https://npmjs.com/package/undici-types)
 
-```sh
-npm install @jridgewell/resolve-uri
-```
-
-## Usage
-
-```typescript
-function resolve(input: string, base?: string): string;
-```
-
-```js
-import resolve from '@jridgewell/resolve-uri';
-
-resolve('foo', 'https://example.com'); // => 'https://example.com/foo'
-```
-
-| Input                 | Base                    | Resolution                     | Explanation                                                  |
-|-----------------------|-------------------------|--------------------------------|--------------------------------------------------------------|
-| `https://example.com` | _any_                   | `https://example.com/`         | Input is normalized only                                     |
-| `//example.com`       | `https://base.com/`     | `https://example.com/`         | Input inherits the base's protocol                           |
-| `//example.com`       | _rest_                  | `//example.com/`               | Input is normalized only                                     |
-| `/example`            | `https://base.com/`     | `https://base.com/example`     | Input inherits the base's origin                             |
-| `/example`            | `//base.com/`           | `//base.com/example`           | Input inherits the base's host and remains protocol relative |
-| `/example`            | _rest_                  | `/example`                     | Input is normalized only                                     |
-| `example`             | `https://base.com/dir/` | `https://base.com/dir/example` | Input is joined with the base                                |
-| `example`             | `https://base.com/file` | `https://base.com/example`     | Input is joined with the base without its file               |
-| `example`             | `//base.com/dir/`       | `//base.com/dir/example`       | Input is joined with the base's last directory               |
-| `example`             | `//base.com/file`       | `//base.com/example`           | Input is joined with the base without its file               |
-| `example`             | `/base/dir/`            | `/base/dir/example`            | Input is joined with the base's last directory               |
-| `example`             | `/base/file`            | `/base/example`                | Input is joined with the base without its file               |
-| `example`             | `base/dir/`             | `base/dir/example`             | Input is joined with the base's last directory               |
-| `example`             | `base/file`             | `base/example`                 | Input is joined with the base without its file               |
+# Credits
+These definitions were written by [Microsoft TypeScript](https://github.com/Microsoft), [Alberto Schiabel](https://github.com/jkomyno), [Andrew Makarov](https://github.com/r3nya), [Benjamin Toueg](https://github.com/btoueg), [David Junger](https://github.com/touffy), [Mohsen Azimi](https://github.com/mohsen1), [Nikita Galkin](https://github.com/galkin), [Sebastian Silbermann](https://github.com/eps1lon), [Wilco Bakker](https://github.com/WilcoBakker), [Marcin Kopacz](https://github.com/chyzwar), [Trivikram Kamat](https://github.com/trivikr), [Junxiao Shi](https://github.com/yoursunny), [Ilia Baryshnikov](https://github.com/qwelias), [ExE Boss](https://github.com/ExE-Boss), [Piotr Błażejewicz](https://github.com/peterblazejewicz), [Anna Henningsen](https://github.com/addaleax), [Victor Perin](https://github.com/victorperin), [NodeJS Contributors](https://github.com/NodeJS), [Linus Unnebäck](https://github.com/LinusU), [wafuwafu13](https://github.com/wafuwafu13), [Matteo Collina](https://github.com/mcollina), [Dmitry Semigradsky](https://github.com/Semigradsky), and [René](https://github.com/Renegade334).
